@@ -2,11 +2,13 @@
 
 ## Instructions:
 `git clone https://github.com/Yoonis/nyc-gh-veterans.git`
+
 `cd nyc-gh-veterans/`
 
 ## Driver Code:
 `ruby find_veterans.rb`
 
 ## Note:
-Unauthenticated GitHub API calls come with a rate limit. Run the following cmd to see your status:
+Unauthenticated GitHub API calls come with a rate limit. See your status with:
+
 `curl https://api.github.com/rate_limit`
