@@ -38,3 +38,10 @@ class FindVeterans
     end
   end
 end
+
+# Driver Code
+veteran_finder = FindVeterans.new
+veteran_finder.get_name_and_location
+veteran_finder.count_public_repos
+veteran_finder.generate_CSV
+puts "See veterans.csv for the final output!"
