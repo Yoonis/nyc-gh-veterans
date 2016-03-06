@@ -5,7 +5,9 @@
 
 `cd nyc-gh-veterans/`
 
-`bundle`
+If you don't have bundle, run `gem install bundler` first.
+
+Then run `bundle` to install dependencies.
 
 ## Driver Code:
 `ruby find_veterans.rb`
