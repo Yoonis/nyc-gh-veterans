@@ -5,6 +5,8 @@
 
 `cd nyc-gh-veterans/`
 
+`bundle`
+
 ## Driver Code:
 `ruby find_veterans.rb`
 
