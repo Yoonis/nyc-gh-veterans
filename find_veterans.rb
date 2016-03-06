@@ -11,7 +11,8 @@ class FindVeterans
     new_yorkers.map.with_index { |user, i| @top_ten << [user["login"]] if i < 10 }
   end
 
-  def name_and_location
+  # Get the names and locations of these first 10 users
+  def get_name_and_location
     @top_ten.each do |user|
       user_details = self.class.get("/users/#{user[0]}").parsed_response
       user << user_details["name"]
@@ -25,14 +26,15 @@ class FindVeterans
       public_repos = self.class.get("/users/#{user[0]}/repos?q=visibility:public+created:\>\=2015-01-01T00:00:00-07:00").parsed_response
       user << public_repos.length
     end
-    byebug
   end
 
   # Generate a CSV file with the following headers: login, name, location, repo count
-
+  def generate_CSV
+    CSV.open("./veterans.csv", "w", 
+              write_headers: true,
+              headers: ["login", "name", "location", "repo count"]
+            ) do |csv|
+      @top_ten.each { |row| csv << row }
+    end
+  end
 end
-
-# Driver Code:
-# test = FindVeterans.new
-# test.name_and_location
-# test.count_public_repos
