@@ -9,7 +9,7 @@ If you don't have bundle, run `gem install bundler` first.
 
 Then run `bundle` to install dependencies.
 
-## Driver Code:
+## Script Execution Code:
 `ruby find_veterans.rb`
 
 ## Note:
